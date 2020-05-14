@@ -1,0 +1,9 @@
+<!doctype html>
+<title>Crawl Data Dashboard</title>
+<link rel=stylesheet type=text/css href="./static/style.css">
+<div class=page>
+  <h1>Crawl Data Dashboard</h1>
+  {% for table in tables %}
+      {{ table | safe }}
+  {% endfor %}
+</div>

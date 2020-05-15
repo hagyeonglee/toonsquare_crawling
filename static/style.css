@@ -13,6 +13,7 @@ table.dataframe, .dataframe th, .dataframe td {
   margin-bottom: 40px;
   font-size: 0.9em;
 }
+table.dataframe td
 
 tr:nth-child(odd)		{ background-color: #eeeeee; }
 tr:nth-child(even)	{ background-color: #ffffff; }

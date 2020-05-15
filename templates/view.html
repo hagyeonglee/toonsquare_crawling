@@ -3,7 +3,51 @@
 <link rel=stylesheet type=text/css href="./static/style.css">
 <div class=page>
   <h1>Crawl Data Dashboard</h1>
-  {% for table in tables %}
-      {{ table | safe }}
-  {% endfor %}
+    <div style="width:71%;float:left;">
+        {% for table in tables %}
+            {{ table | safe }}
+        {% endfor %}
+        <script type="text/javascript">
+            {#alert(document.getElementsByTagName("tr").length-1);#}
+            rownum = document.getElementsByTagName("tr").length-1
+        </script>
+    </div>
+    <div style="width:28%;float:right;">
+{#        {% for stable in stables %}#}
+{#            {{ stable | safe }}#}
+{#            <input type="checkbox" name="emotion" value=""/>#}
+{#            <button name="button">Button</button>#}
+{#        {% endfor %}#}
+
+        <table id="example-table-3" width="100%" class="table table-bordered table-hover text-center">
+			<thead><th>supervise</th></thead>
+			<tbody>
+                <script type="text/javascript">
+                        {#alert(rownum);#}
+                         for(i=1;i<rownum;i++){
+                            document.write("<tr>")
+                             document.write("<td><input type=\"checkbox\" name=\"user_CheckBox\" >중립\n" +
+                                 "                    <input type=\"checkbox\" name=\"user_CheckBox\" >슬픔\n" +
+                                 "                    <input type=\"checkbox\" name=\"user_CheckBox\" >놀람\n" +
+                                 "                    <input type=\"checkbox\" name=\"user_CheckBox\" >기쁨\n" +
+                                 "                    <input type=\"checkbox\" name=\"user_CheckBox\" >분노\n" +
+                                 "                    <input type=\"checkbox\" name=\"user_CheckBox\" >공포\n" +
+                                 "                    <input type=\"checkbox\" name=\"user_CheckBox\" >혐오</td>")
+                            document.write("</tr>")
+                        }
+                </script>
+{#				<tr>#}
+{#					<td><input type="checkbox" name="user_CheckBox" >중립#}
+{#                    <input type="checkbox" name="user_CheckBox" >슬픔#}
+{#                    <input type="checkbox" name="user_CheckBox" >놀람#}
+{#                    <input type="checkbox" name="user_CheckBox" >기쁨#}
+{#                    <input type="checkbox" name="user_CheckBox" >분노#}
+{#                    <input type="checkbox" name="user_CheckBox" >공포#}
+{#                    <input type="checkbox" name="user_CheckBox" >혐오</td>#}
+{#				</tr>#}
+			</tbody>
+		</table>
+    </div>
+
 </div>
+

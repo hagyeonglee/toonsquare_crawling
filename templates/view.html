@@ -13,41 +13,35 @@
         </script>
     </div>
     <div style="width:28%;float:right;">
+        {% extends "supervise.html" %}
+{#        <div class="list-group col">#}
 {#        {% for stable in stables %}#}
 {#            {{ stable | safe }}#}
-{#            <input type="checkbox" name="emotion" value=""/>#}
+{#            <div class="list-group-item">{{ stable | safe }}</div>#}
 {#            <button name="button">Button</button>#}
 {#        {% endfor %}#}
+{#        </div>#}
 
-        <table id="example-table-3" width="100%" class="table table-bordered table-hover text-center">
-			<thead><th>supervise</th></thead>
-			<tbody>
-                <script type="text/javascript">
-                        {#alert(rownum);#}
-                         for(i=1;i<rownum;i++){
-                            document.write("<tr>")
-                             document.write("<td><input type=\"checkbox\" name=\"user_CheckBox\" >중립\n" +
-                                 "                    <input type=\"checkbox\" name=\"user_CheckBox\" >슬픔\n" +
-                                 "                    <input type=\"checkbox\" name=\"user_CheckBox\" >놀람\n" +
-                                 "                    <input type=\"checkbox\" name=\"user_CheckBox\" >기쁨\n" +
-                                 "                    <input type=\"checkbox\" name=\"user_CheckBox\" >분노\n" +
-                                 "                    <input type=\"checkbox\" name=\"user_CheckBox\" >공포\n" +
-                                 "                    <input type=\"checkbox\" name=\"user_CheckBox\" >혐오</td>")
-                            document.write("</tr>")
-                        }
-                </script>
-{#				<tr>#}
-{#					<td><input type="checkbox" name="user_CheckBox" >중립#}
-{#                    <input type="checkbox" name="user_CheckBox" >슬픔#}
-{#                    <input type="checkbox" name="user_CheckBox" >놀람#}
-{#                    <input type="checkbox" name="user_CheckBox" >기쁨#}
-{#                    <input type="checkbox" name="user_CheckBox" >분노#}
-{#                    <input type="checkbox" name="user_CheckBox" >공포#}
-{#                    <input type="checkbox" name="user_CheckBox" >혐오</td>#}
-{#				</tr>#}
-			</tbody>
-		</table>
+{#            <table border="1" class="dataframe">#}
+{#                <thead><th></th><td>supervise</td></thead>#}
+{#                    <tbody>#}
+{#                        <script type="text/javascript">#}
+{#                                alert(rownum);#}
+{#                                 for(i=1;i<rownum+1;i++){#}
+{#                                    document.write("<tr>")#}
+{#                                     document.write("<th>"+i+"</th>")#}
+{#                                     document.write("<td>")#}
+{##}
+{#                                     document.write("</td>")#}
+{#                                    document.write("</tr>")#}
+{#                                }#}
+{#                        </script>#}
+{#                    </tbody>#}
+{#                </table>#}
+
+{#                <br>#}
+{#                <input style="alignment-baseline: center" id="seletBtn" type="submit" name="button">#}
+{#                <textarea></textarea>#}
     </div>
-
 </div>
 

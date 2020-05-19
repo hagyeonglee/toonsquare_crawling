@@ -1,0 +1,36 @@
+{#<!doctype html>#}
+{#<title>Supervise Data Dashboard</title>#}
+{#<link rel=stylesheet type=text/css href="./static/style.css">#}
+<table border="1" height="500" class="dataframe">
+{#    <thead><th></th><td>supervise</td></thead>#}
+    <thead><th></th><td style="text-align: center;"><strong>supervise</strong></td></thead>
+        <tbody>
+{#            <tr>#}
+{#               <th>1</th>#}
+{#                <td><input type="checkbox" name="user_CheckBox" >중립</td>#}
+{#            </tr>#}
+            <script type="text/javascript">
+                    {#alert({{row_num}});#}
+                     for(i=1;i< {{row_num}}+1;i++){
+                        document.write("<tr>")
+                         document.write("<th>"+i+"</th>")
+                         document.write("<td><input type=\"checkbox\" name=\"user_CheckBox\" >중립\n" +
+                             "                    <input type=\"checkbox\" name=\"user_CheckBox\" >슬픔\n" +
+                             "                    <input type=\"checkbox\" name=\"user_CheckBox\" >놀람\n" +
+                             "                    <input type=\"checkbox\" name=\"user_CheckBox\" >기쁨\n" +
+                             "                    <input type=\"checkbox\" name=\"user_CheckBox\" >분노\n" +
+                             "                    <input type=\"checkbox\" name=\"user_CheckBox\" >공포\n" +
+                             "                    <input type=\"checkbox\" name=\"user_CheckBox\" >혐오</td>")
+
+                         {#document.write("<td><input type=\"checkbox\" name=\"user_CheckBox\" >중립\n" +#}
+                         {#    "                    <input type=\"checkbox\" name=\"user_CheckBox\" >슬픔\n" +#}
+                         {#    "                    <input type=\"checkbox\" name=\"user_CheckBox\" >놀람\n" +#}
+                         {#    "                    <input type=\"checkbox\" name=\"user_CheckBox\" >기쁨\n" +#}
+                         {#    "                    <input type=\"checkbox\" name=\"user_CheckBox\" >분노\n" +#}
+                         {#    "                    <input type=\"checkbox\" name=\"user_CheckBox\" >공포\n" +#}
+                         {#    "                    <input type=\"checkbox\" name=\"user_CheckBox\" >혐오</td>")                         #}
+                        document.write("</tr>")
+                    }
+            </script>
+        </tbody>
+</table>

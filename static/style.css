@@ -4,18 +4,25 @@ h1, h2          { margin: 0; }
 h1              { border-bottom: 2px solid #eeeeee; }
 h2              { font-size: 1.2em; }
 
+/*table.supervise, .supervise th, .supervise td*/
+
 table.dataframe, .dataframe th, .dataframe td {
+  height: 100px;
   border: none;
   border-bottom: 1px solid #c8c8c8;
   border-collapse: collapse;
   text-align:left;
-  padding: 10px;
-  margin-bottom: 40px;
-  font-size: 0.9em;
+  padding: 5px;
+  /*margin-bottom: 40px;*/
+  font-size: large;
 }
-table.dataframe td
+
 
 tr:nth-child(odd)		{ background-color: #eeeeee; }
 tr:nth-child(even)	{ background-color: #ffffff; }
 
 tr:hover            { background-color: #a3e3db;}
+
+button{
+ float: right;
+}

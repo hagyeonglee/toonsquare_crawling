@@ -7,24 +7,31 @@ import ipywidgets as widgets
 
 app = Flask(__name__)
 
-click_list = []
-
-button = widgets.Button(description='click')
-
 @app.route('/')
 def make_read_csv():
     data = pd.read_csv('naver_webtoon_comments.csv')
-    data.set_index(["Unnamed: 0"],inplace=True)
-    data.index.name = None
     num_row = len(data)
-    #
-    checkbox = widgets.Checkbox(description="emotion")
-    # #supervise 열 추가
-    # new_data = data.assign(supervise="none")
-    display(checkbox)
-    supervise = pd.DataFrame({'supervise': [checkbox for checkbox in range (1,num_row+1)]})
-    # print(new_data.to_html())
-    return render_template('view.html',tables=[data.to_html()],stables=[supervise.to_html()])
+    s = pd.Series([index for index in range(1,num_row+1)])
+    data.set_index([s], inplace=True)
+    data.index.name = None
+    data = data.drop(['Unnamed: 0'],axis=1)
+    print(data.shape)
+    return render_template('view.html',row_num=num_row, tables=[data.to_html()])
+
+# @app.route('/')
+# def load():
+#     data = pd.read_csv('naver_webtoon_comments.csv')
+#     num_row = len(data)
+#     render = render_template('supervise.html',row_num=num_row)
+#     print(type(render))
+#     print(render)
+#     tables= pd.read_html(render)
+#     print(len(tables))
+#     print(tables[0])
+#     df = pd.DataFrame(tables[0])
+#     print(df.shape)
+#     return render_template('view.html',row_num=num_row,tables=[df.to_html()])
+
 
 
 if __name__ == '__main__':

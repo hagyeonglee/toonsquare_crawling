@@ -1,27 +1,39 @@
-{#<!doctype html>#}
+{#실제로 사용 x
+<!doctype html>#}
 {#<title>Supervise Data Dashboard</title>#}
 {#<link rel=stylesheet type=text/css href="./static/style.css">#}
-<table border="1" height="500" class="dataframe">
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+{#<table border="1" height="500" class="dataframe">#}
 {#    <thead><th></th><td>supervise</td></thead>#}
-    <thead><th></th><td style="text-align: center;"><strong>supervise</strong></td></thead>
-        <tbody>
+{#    <thead><th></th><th style="text-align: center;"><strong>supervise</strong></th></thead>#}
+{#        <tbody>#}
 {#            <tr>#}
 {#               <th>1</th>#}
 {#                <td><input type="checkbox" name="user_CheckBox" >중립</td>#}
 {#            </tr>#}
-            <script type="text/javascript">
-                    {#alert({{row_num}});#}
-                     for(i=1;i< {{row_num}}+1;i++){
-                        document.write("<tr>")
-                         document.write("<th>"+i+"</th>")
-                         document.write("<td><input type=\"checkbox\" name=\"user_CheckBox\" >중립\n" +
-                             "                    <input type=\"checkbox\" name=\"user_CheckBox\" >슬픔\n" +
-                             "                    <input type=\"checkbox\" name=\"user_CheckBox\" >놀람\n" +
-                             "                    <input type=\"checkbox\" name=\"user_CheckBox\" >기쁨\n" +
-                             "                    <input type=\"checkbox\" name=\"user_CheckBox\" >분노\n" +
-                             "                    <input type=\"checkbox\" name=\"user_CheckBox\" >공포\n" +
-                             "                    <input type=\"checkbox\" name=\"user_CheckBox\" >혐오</td>")
+<body>
+            <button class="btn-primary" value="중립">중립</button>
+            <button class="btn-primary" value="기쁨">기쁨</button>
+            <button class="btn-primary" value="슬픔">슬픔</button>
+            <button class="btn-primary" value="혐오">혐오</button>
+            <button class="btn-primary" value="공포">공포</button>
+            <button class="btn-primary" value="분노">분노</button>
+            <button class="btn-primary" value="놀람">놀람</button>
 
+            <script type="text/javascript">
+                    $('.btn-primary').on("click",(e) =>{
+                        console.log(e.target.value);
+                    })
+
+                    {#alert({{row_num}});#}
+                    {# for(i=1;i< {{row_num}}+1;i++){#}
+                    {##}
+                    {#    document.write("<tr>")#}
+                    {#    document.write("<th>"+i+"</th>")#}
+                         {#document.write("<button class='btn-primary' value='중립'>중립</button>")#}
+                    {##}
                          {#document.write("<td><input type=\"checkbox\" name=\"user_CheckBox\" >중립\n" +#}
                          {#    "                    <input type=\"checkbox\" name=\"user_CheckBox\" >슬픔\n" +#}
                          {#    "                    <input type=\"checkbox\" name=\"user_CheckBox\" >놀람\n" +#}
@@ -29,8 +41,8 @@
                          {#    "                    <input type=\"checkbox\" name=\"user_CheckBox\" >분노\n" +#}
                          {#    "                    <input type=\"checkbox\" name=\"user_CheckBox\" >공포\n" +#}
                          {#    "                    <input type=\"checkbox\" name=\"user_CheckBox\" >혐오</td>")                         #}
-                        document.write("</tr>")
-                    }
+                    {#    document.write("</tr>")#}
             </script>
-        </tbody>
-</table>
+            </body>
+{#        </tbody>#}
+{#</table>#}

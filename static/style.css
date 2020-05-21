@@ -1,5 +1,6 @@
 body            { font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
-a, h1, h2       { color: #377ba8; }
+a, h1, h2       { color: #065471; }
+/*377ba8*/
 h1, h2          { margin: 0; }
 h1              { border-bottom: 2px solid #eeeeee; }
 h2              { font-size: 1.2em; }
@@ -17,9 +18,44 @@ table.dataframe, .dataframe th, .dataframe td {
   font-size: large;
 }
 
+html, body {
+  height: 100%;
+}
 
-tr:nth-child(odd)		{ background-color: #eeeeee; }
-tr:nth-child(even)	{ background-color: #ffffff; }
+.wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  width: 140px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+.button:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+/*tr:nth-child(odd)		{ background-color: #eeeeee; }*/
+/*tr:nth-child(even)	{ background-color: #ffffff; }*/
 
 tr:hover            { background-color: #a3e3db;}
 

@@ -1,5 +1,6 @@
 from flask import *
 import pandas as pd
+
 import numpy as np
 import sys
 from IPython.display import display, HTML
@@ -16,6 +17,11 @@ def make_read_csv():
     data.index.name = None
     data = data.drop(['Unnamed: 0'],axis=1)
     print(data.shape)
+    try:
+        import simplejson as json
+    except (ImportError):
+        import json
+    # result = json.loads(json_string)
     return render_template('view.html',row_num=num_row, tables=[data.to_html()])
 
 # @app.route('/')

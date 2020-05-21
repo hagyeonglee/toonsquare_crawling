@@ -1,6 +1,9 @@
 <!doctype html>
 <title>Crawl Data Dashboard</title>
 <link rel=stylesheet type=text/css href="./static/style.css">
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
 <div class=page>
   <h1>Crawl Data Dashboard</h1>
     <div style="width:71%;float:left;">
@@ -13,7 +16,7 @@
         </script>
     </div>
     <div style="width:28%;float:right;">
-        {% extends "supervise.html" %}
+{#        {% extends "supervise.html" %}#}
 {#        <div class="list-group col">#}
 {#        {% for stable in stables %}#}
 {#            {{ stable | safe }}#}
@@ -22,22 +25,44 @@
 {#        {% endfor %}#}
 {#        </div>#}
 
-{#            <table border="1" class="dataframe">#}
-{#                <thead><th></th><td>supervise</td></thead>#}
-{#                    <tbody>#}
-{#                        <script type="text/javascript">#}
-{#                                alert(rownum);#}
-{#                                 for(i=1;i<rownum+1;i++){#}
-{#                                    document.write("<tr>")#}
-{#                                     document.write("<th>"+i+"</th>")#}
-{#                                     document.write("<td>")#}
-{##}
-{#                                     document.write("</td>")#}
-{#                                    document.write("</tr>")#}
-{#                                }#}
-{#                        </script>#}
-{#                    </tbody>#}
-{#                </table>#}
+            <table border="1" class="dataframe">
+                <thead><th></th><td><strong>supervise</strong></td></thead>
+                    <tbody>
+                        <script type="text/javascript">
+                                var list_emotion = []
+                                {#alert(rownum);#}
+                                 for(var i=1;i<rownum+1;i++){
+                                    document.write("<tr>")
+                                     document.write("<th>"+i+"</th>")
+                                     document.write("<td>")
+                                     document.write("<div class=\"wrap\">")
+                                     document.write("<button class=\"button\" value=\"중립\">중립</button>")
+                                     document.write("<button class=\"button\" value=\"기쁨\">기쁨</button>")
+                                     document.write("<button class=\"button\" value=\"슬픔\">슬픔</button>")
+                                     document.write("<button class=\"button\" value=\"혐오\">혐오</button>")
+                                     document.write("<button class=\"button\" value=\"공포\">공포</button>")
+                                     document.write("<button class=\"button\" value=\"분노\">분노</button>")
+                                     document.write("<button class=\"button\" value=\"놀람\">놀람</button>")
+                                     document.write("</div>")
+                                     document.write("</td>")
+                                    document.write("</tr>")
+                                }
+
+                                 $('.button').on("click",(e) => {
+                                     console.log(e.target.value)
+                                     list_emotion.push(e.target.value)
+                                 })
+                                {##ffc045"}  2EE59D#}
+                                $('.button').css({background:"#ffffff",color:"#000"})
+                                $('.button').on("click",(e) =>{
+                                        $(e.target).css({background:"#065471",color:"#2EE59D"})
+                                })
+                                const fs = require('fs')
+                                var json_string = JSON.stringify(list_emotion)
+                                fs.writeFile('test.json',json_string,'utf-8')
+                        </script>
+                    </tbody>
+                </table>
 
 {#                <br>#}
 {#                <input style="alignment-baseline: center" id="seletBtn" type="submit" name="button">#}

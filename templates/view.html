@@ -6,7 +6,7 @@
 </head>
 <div class=page>
   <h1>Crawl Data Dashboard</h1>
-    <div style="width:71%;float:left;">
+    <div style="width:80%;float:left;">
         {% for table in tables %}
             {{ table | safe }}
         {% endfor %}
@@ -15,7 +15,7 @@
             rownum = document.getElementsByTagName("tr").length-1
         </script>
     </div>
-    <div style="width:28%;float:right;">
+    <div style="width:19%;float:right;">
 {#        {% extends "supervise.html" %}#}
 {#        <div class="list-group col">#}
 {#        {% for stable in stables %}#}
@@ -26,47 +26,74 @@
 {#        </div>#}
 
             <table border="1" class="dataframe">
-                <thead><th></th><td><strong>supervise</strong></td></thead>
+                <thead><td><strong>Supervise</strong></td></thead>
                     <tbody>
+
                         <script type="text/javascript">
-                                var list_emotion = []
-                                {#alert(rownum);#}
-                                 for(var i=1;i<rownum+1;i++){
+                                var list_emotion = [];
+
+                                 {#for(var i=1;i<rownum+1;i++){#}
                                     document.write("<tr>")
-                                     document.write("<th>"+i+"</th>")
+                                     {#document.write("<th>"+i+"</th>")#}
                                      document.write("<td>")
                                      document.write("<div class=\"wrap\">")
-                                     document.write("<button class=\"button\" value=\"중립\">중립</button>")
-                                     document.write("<button class=\"button\" value=\"기쁨\">기쁨</button>")
-                                     document.write("<button class=\"button\" value=\"슬픔\">슬픔</button>")
-                                     document.write("<button class=\"button\" value=\"혐오\">혐오</button>")
-                                     document.write("<button class=\"button\" value=\"공포\">공포</button>")
-                                     document.write("<button class=\"button\" value=\"분노\">분노</button>")
-                                     document.write("<button class=\"button\" value=\"놀람\">놀람</button>")
+                                     document.write("<form action=\"/\" method=\"POST\">")
+                                     document.write("<button class=\"button\" value=\"중립\" name='submit_button'>중립</button>")
+                                     document.write("<button class=\"button\" value=\"기쁨\" name='submit_button'>기쁨</button>")
+                                     document.write("<button class=\"button\" value=\"슬픔\" name='submit_button'>슬픔</button>")
+                                     document.write("<button class=\"button\" value=\"혐오\" name='submit_button'>혐오</button>")
+                                     document.write("<button class=\"button\" value=\"공포\" name='submit_button'>공포</button>")
+                                     document.write("<button class=\"button\" value=\"분노\" name='submit_button'>분노</button>")
+                                     document.write("<button class=\"button\" value=\"놀람\" name='submit_button'>놀람</button>")
+
                                      document.write("</div>")
                                      document.write("</td>")
                                     document.write("</tr>")
-                                }
 
                                  $('.button').on("click",(e) => {
                                      console.log(e.target.value)
                                      list_emotion.push(e.target.value)
+                                     $(e.target).css({background:"#065471",color:"#2EE59D"})
                                  })
                                 {##ffc045"}  2EE59D#}
                                 $('.button').css({background:"#ffffff",color:"#000"})
-                                $('.button').on("click",(e) =>{
-                                        $(e.target).css({background:"#065471",color:"#2EE59D"})
-                                })
-                                const fs = require('fs')
-                                var json_string = JSON.stringify(list_emotion)
-                                fs.writeFile('test.json',json_string,'utf-8')
+                            document.write("</form>")
                         </script>
-                    </tbody>
-                </table>
 
-{#                <br>#}
-{#                <input style="alignment-baseline: center" id="seletBtn" type="submit" name="button">#}
-{#                <textarea></textarea>#}
+                    </tbody>
+            </table>
+{#        <form action="/" method="POST">#}
+{#            <button class="button SUBMIT" type="submit" value="submit">Submit</button>#}
+{#            <p id="output" name="output"></p>#}
+{#        </form>#}
+            <script>
+                $('.button.SUBMIT').on("click",function(){
+                    alert('Sending json start')
+    {#                document.write("            <table border=\"1\" class=\"dataframe\">\n" +#}
+    {#"                <thead><th></th><td><strong>Supervise</strong></td></thead>\n" +#}
+    {#"                    <tbody>")#}
+    {#                for(var j=1;j<list_emotion.length+1;j++){#}
+    {#                    document.write("<tr>")#}
+    {#                    document.write("<th>"+j+"</th>")#}
+    {#                    document.write("<td>")#}
+    {#                    document.write(list_emotion[j-1])#}
+    {#                    document.write("</td>")#}
+    {#                    document.write("</tr>")#}
+    {#                }#}
+    {#                document.write(" </tbody>\n" +"</table>")#}
+                    {#document.write(list_emotion)#}
+                    {#참고 http://jsfiddle.net/sturtevant/vUnF9/ #}
+                    {#var json_string = JSON.stringify(list_emotion)#}
+                    {#console.log(json_string)#}
+                    {#console.log(typeof(json_string)) -- string #}
+                    {#var parse_object = JSON.parse(json_string)#}
+                    {#console.log(parse_object)#}
+                    {#console.log(typeof(parse_object)) -- object #}
+                    {#document.getElementById('output').innerHTML = json_string#}
+                    alert('Sending json end')
+                })
+            </script>
+
     </div>
 </div>
 

@@ -12,7 +12,7 @@ table.dataframe, .dataframe th, .dataframe td {
   border: none;
   border-bottom: 1px solid #c8c8c8;
   border-collapse: collapse;
-  text-align:left;
+  text-align:center;
   padding: 3px;
   /*margin-bottom: 40px;*/
   font-size: medium;

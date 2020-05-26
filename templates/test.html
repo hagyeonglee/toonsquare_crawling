@@ -1,0 +1,71 @@
+<!doctype html>
+<title>Crawl Data Dashboard</title>
+<link rel=stylesheet type=text/css href="./static/style.css">
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <form method="POST" action="/calculate">
+        <h2>Move to page  <input type="text" name="num" id="num"></h2>
+    </form>
+    <form method="POST" action="/result">
+        <button name="toRESULT" class="button SUBMIT" value="submit">SUBMIT</button>
+    </form>
+    {% if num == num_row/15  %}
+        <h1>Page end</h1>
+    {% elif num == 1  %}
+        <h1>Page start</h1>
+    {% else %}
+        <h1>Page {{ num }}</h1>
+    {% endif %}
+     <div style="width:90%;float:left;">
+            {% if num == None %}
+                <h5> 아직 아무 숫자도 입력이 안되었습니다. </h5>
+            {% else %}
+                {% for table in tables %}
+                    {{ table | safe }}
+                {% endfor %}
+            {% endif %}
+
+    </div>
+     <div style="width:9%;float:right;">
+        <div class="menubar" id="menubar">
+            <table border="1" class="dataframe" >
+                <thead><td><strong>Supervise</strong></td></thead>
+                    <tbody>
+{#<form action="/"+{{ num }} method="POST">#}
+                        <script type="text/javascript">
+                                var list_emotion = [];
+                                 {#for(var i=1;i<rownum+1;i++){#}
+                                    document.write("<tr>")
+                                     {#document.write("<th>"+i+"</th>")#}
+                                     document.write("<td>")
+                                     document.write("<div class=\"wrap\">")
+                                     document.write("<form action=\"/{{ num }}\" method=\"POST\">")
+                                     document.write("<button class=\"button\" value=\"중립\" name='submit_button'>중립</button><br>")
+                                     document.write("<button class=\"button\" value=\"기쁨\" name='submit_button'>기쁨</button><br>")
+                                     document.write("<button class=\"button\" value=\"슬픔\" name='submit_button'>슬픔</button><br>")
+                                     document.write("<button class=\"button\" value=\"혐오\" name='submit_button'>혐오</button><br>")
+                                     document.write("<button class=\"button\" value=\"공포\" name='submit_button'>공포</button><br>")
+                                     document.write("<button class=\"button\" value=\"분노\" name='submit_button'>분노</button><br>")
+                                     document.write("<button class=\"button\" value=\"놀람\" name='submit_button'>놀람</button><br>")
+                                     document.write("</div>")
+                                     document.write("</td>")
+                                     document.write("</tr>")
+
+                                 $('.button').on("click",(e) => {
+                                     console.log(e.target.value)
+                                     list_emotion.push(e.target.value)
+                                     $(e.target).css({background:"#065471",color:"#2EE59D"})
+                                 })
+                                {##ffc045"}  2EE59D#}
+                                $('.button').css({background:"#ffffff",color:"#000"})
+                            document.write("</form>")
+                        </script>
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

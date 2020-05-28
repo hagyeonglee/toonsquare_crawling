@@ -1,0 +1,80 @@
+<!doctype html>
+<title>Crawl Data Dashboard</title>
+<link rel=stylesheet type=text/css href="./static/supervise.css">
+<head>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <div align="center">
+{#    <form method="POST" action="/finalresult"style="float: right" >#}
+{#        <button name="toCSV" class="button SUBMIT" value="submit">to CSV</button>#}
+{#    </form>#}
+    <form method="POST" action="/tohome" style="float: left">
+        <button name="HOME" class="button SUBMIT" value="submit">HOME</button>
+    </form>
+    <form method="POST" action="/edit" style="float: left">
+        <button name="edit" class="button SUBMIT" value="submit">edit</button>
+    </form>
+    </div>
+</head>
+<div class=page>
+  <h1>Edit-Supervise</h1>
+    <form method="POST" action="/calculate">
+        <h2>Move to Supervise Page   <input type="text" name="num" id="num"></h2>
+    </form>
+    <div id="supervise" align="center">
+{#        <script type="text/javascript">#}
+{#            function showemotion(emotion) {#}
+{#                return emotion#}
+{#            }#}
+{#        </script>#}
+        <div style="width:10%;float:left;">
+            {% for table in tables %}
+                {{ table | safe }}
+            {% endfor %}
+            <form method="GET" action="/editsupervise" style="float: left">
+            {% for emotion in emotiondata %}
+                {% if emotion == "중립" %}
+                     <input style="width:50px" name="edata"type="text"  value="중립">
+                      <br>
+                {% elif emotion == "공포" %}
+                     <input style="width:50px" name="edata"type="text" value="공포">
+                    <br>
+                {% elif emotion == "혐오" %}
+                     <input style="width:50px" name="edata"type="text"  value="혐오">
+                    <br>
+                {% elif emotion == "분노" %}
+                     <input style="width:50px" name="edata"type="text"  value="분노">
+                    <br>
+                {% elif emotion == "놀람" %}
+                     <input style="width:50px" name="edata"type="text"  value="놀람">
+                    <br>
+                {% elif emotion == "슬픔" %}
+                     <input style="width:50px" name="edata" type="text"  value="슬픔">
+                    <br>
+                {% elif emotion == "기쁨" %}
+                     <input style="width:50px" name="edata"type="text" value="기쁨">
+                    <br>
+                {% elif emotion == "None" %}
+                     <input style="width:50px" name="edata"type="text" value="None">
+                    <br>
+                {% endif %}
+            {% endfor %}
+{#            </form>#}
+{#            <form method="POST" action="/resultemotion">#}
+                <button name="SAVE" class="button SUBMIT" value="submit">Save</button>
+            </form>
+{#        {% for edatas in edata %}#}
+{#            {{ edatas }}#}
+{#        {% endfor %}#}
+{#        {% for newtable in newtables %}#}
+{#                    {{ newtable | safe }}#}
+{#        {% endfor %}#}
+        </div>
+        <div style="width:90%;float:right;">
+            {% for datatable in datatables %}
+                {{ datatable | safe }}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+</html>

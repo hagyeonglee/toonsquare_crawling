@@ -3,19 +3,19 @@
 <link rel=stylesheet type=text/css href="./static/style.css">
 <head>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <form method="POST" action="/tohome" style="float: left">
+        <button name="HOME" class="button SUBMIT" value="submit">HOME</button>
+    </form>
+    <form method="POST" action="/result" style="float: left">
+        <button name="toRESULT" class="button SUBMIT" value="submit">RESULT</button>
+    </form>
 </head>
 <div class=page>
   <h1>Crawl Data Dashboard</h1>
     <form method="POST" action="/calculate">
         <h2>Move to Supervise Page   <input type="text" name="num" id="num"></h2>
     </form>
-    <form method="POST" action="/result">
-        <button name="toRESULT" class="button SUBMIT" value="submit">RESULT</button>
-    </form>
-    <form method="POST" action="/tohome">
-        <button name="HOME" class="button SUBMIT" value="submit">HOME</button>
-    </form>
-    <div style="width:90%;float:left;">
+    <div style="width:100%;">
         {% for table in tables %}
             {{ table | safe }}
         {% endfor %}
@@ -24,101 +24,5 @@
             rownum = document.getElementsByTagName("tr").length-1
         </script>
     </div>
-{#    <div style="width:9%;float:right;">#}
-{#        {% extends "supervise.html" %}#}
-{#        <div class="list-group col">#}
-{#        {% for stable in stables %}#}
-{#            {{ stable | safe }}#}
-{#            <div class="list-group-item">{{ stable | safe }}</div>#}
-{#            <button name="button">Button</button>#}
-{#        {% endfor %}#}
-{#        </div>#}
-{#        <script>#}
-             {#onscroll = function () {#}
-             {#                   var nVScroll = document.documentElement.scrollTop || document.body.scrollTop;#}
-             {#                   if(nVScroll>40) $("menubar").css("position","fixed");#}
-             {#                   else $("menubar").css("position","relative");#}
-             {#                   };#}
-{#            $(function(){#}
-{#            var currentPosition = parseInt($("menubar").css("top"));#}
-{#                $(window).scroll(function() {#}
-{#                        var position = $(window).scrollTop(); // 현재 스크롤바의 위치값을 반환#}
-{#                        $(".menubar").stop().animate({"top":position+currentPosition+"px"},500);#}
-{#                });#}
-{#            });#}
-{#        </script>#}
-{#        <div class="menubar" id="menubar">#}
-{#            <table border="1" class="dataframe" >#}
-{#                <thead><td><strong>Supervise</strong></td></thead>#}
-{#                    <tbody>#}
-{##}
-{#                        <script type="text/javascript">#}
-{#                                var list_emotion = [];#}
-                                 {#for(var i=1;i<rownum+1;i++){#}
-{#                                    document.write("<tr>")#}
-                                     {#document.write("<th>"+i+"</th>")#}
-{#                                     document.write("<td>")#}
-{#                                     document.write("<div class=\"wrap\">")#}
-{#                                     document.write("<form action=\"/\" method=\"POST\">")#}
-{#                                     document.write("<button class=\"button\" value=\"중립\" name='submit_button'>중립</button><br>")#}
-{#                                     document.write("<button class=\"button\" value=\"기쁨\" name='submit_button'>기쁨</button><br>")#}
-{#                                     document.write("<button class=\"button\" value=\"슬픔\" name='submit_button'>슬픔</button><br>")#}
-{#                                     document.write("<button class=\"button\" value=\"혐오\" name='submit_button'>혐오</button><br>")#}
-{#                                     document.write("<button class=\"button\" value=\"공포\" name='submit_button'>공포</button><br>")#}
-{#                                     document.write("<button class=\"button\" value=\"분노\" name='submit_button'>분노</button><br>")#}
-{#                                     document.write("<button class=\"button\" value=\"놀람\" name='submit_button'>놀람</button><br>")#}
-{##}
-{#                                     document.write("</div>")#}
-{#                                     document.write("</td>")#}
-{#                                     document.write("</tr>")#}
-{##}
-{#                                 $('.button').on("click",(e) => {#}
-{#                                     console.log(e.target.value)#}
-{#                                     list_emotion.push(e.target.value)#}
-{#                                     $(e.target).css({background:"#065471",color:"#2EE59D"})#}
-{#                                 })#}
-{##}
-                                {##ffc045"}  2EE59D#}
-{#                                $('.button').css({background:"#ffffff",color:"#000"})#}
-{#                            document.write("</form>")#}
-{#                        </script>#}
-{##}
-{#                    </tbody>#}
-{#            </table>#}
-{#        </div>#}
-{#        <form action="/" method="POST">#}
-{#            <button class="button SUBMIT" type="submit" value="submit">Submit</button>#}
-{#            <p id="output" name="output"></p>#}
-{#        </form>#}
-{#            <script>#}
-{#                $('.button.SUBMIT').on("click",function(){#}
-{#                    alert('Sending json start')#}
-    {#                document.write("            <table border=\"1\" class=\"dataframe\">\n" +#}
-    {#"                <thead><th></th><td><strong>Supervise</strong></td></thead>\n" +#}
-    {#"                    <tbody>")#}
-    {#                for(var j=1;j<list_emotion.length+1;j++){#}
-    {#                    document.write("<tr>")#}
-    {#                    document.write("<th>"+j+"</th>")#}
-    {#                    document.write("<td>")#}
-    {#                    document.write(list_emotion[j-1])#}
-    {#                    document.write("</td>")#}
-    {#                    document.write("</tr>")#}
-    {#                }#}
-    {#                document.write(" </tbody>\n" +"</table>")#}
-                    {#document.write(list_emotion)#}
-                    {#참고 http://jsfiddle.net/sturtevant/vUnF9/ #}
-                    {#var json_string = JSON.stringify(list_emotion)#}
-                    {#console.log(json_string)#}
-                    {#console.log(typeof(json_string)) -- string #}
-                    {#var parse_object = JSON.parse(json_string)#}
-                    {#console.log(parse_object)#}
-                    {#console.log(typeof(parse_object)) -- object #}
-                    {#document.getElementById('output').innerHTML = json_string#}
-{#                    alert('Sending json end')#}
-{#                })#}
-{##}
-{#            </script>#}
-{##}
-{#    </div>#}
 </div>
 

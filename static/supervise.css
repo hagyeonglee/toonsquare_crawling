@@ -1,5 +1,5 @@
 body            { font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
-a, h1, h2, h3, h4, h5       { color: #065471; text-align: center;}
+a, h1, h2, h3, h4, h5       { color: #065471;}
 /*377ba8*/
 h1, h2          { margin: 0; }
 h1              { border-bottom: 2px solid #eeeeee; }
@@ -8,11 +8,11 @@ h2              { font-size: 1.2em; }
 /*table.supervise, .supervise th, .supervise td*/
 
 table.dataframe, .dataframe th, .dataframe td {
-  height: 20px;
+  height: 75px;
   border: none;
   border-bottom: 1px solid #c8c8c8;
   border-collapse: collapse;
-  text-align:center;
+  /*text-align:center;*/
   padding: 3px;
   /*margin-bottom: 40px;*/
   font-size: medium;

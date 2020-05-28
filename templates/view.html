@@ -9,6 +9,12 @@
     <form method="POST" action="/calculate">
         <h2>Move to Supervise Page   <input type="text" name="num" id="num"></h2>
     </form>
+    <form method="POST" action="/result">
+        <button name="toRESULT" class="button SUBMIT" value="submit">RESULT</button>
+    </form>
+    <form method="POST" action="/tohome">
+        <button name="HOME" class="button SUBMIT" value="submit">HOME</button>
+    </form>
     <div style="width:90%;float:left;">
         {% for table in tables %}
             {{ table | safe }}

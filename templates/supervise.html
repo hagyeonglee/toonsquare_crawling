@@ -6,9 +6,16 @@
 </head>
 <div class=page>
   <h1>Supervise-Result</h1>
+    <form method="POST" action="/calculate">
+        <h2>Move to Supervise Page   <input type="text" name="num" id="num"></h2>
+    </form>
     <form method="POST" action="/finalresult">
 {#        <button type="submit">save to CSV</button>#}
         <button name="toCSV" class="button SUBMIT" value="submit">to CSV</button>
+    </form>
+    <form method="POST" action="/tohome">
+{#        <button type="submit">save to CSV</button>#}
+        <button name="HOME" class="button SUBMIT" value="submit">HOME</button>
     </form>
     <div id="supervise" align="center">
 {#        {% for table in tables %}#}

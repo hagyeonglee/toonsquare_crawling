@@ -1,0 +1,26 @@
+<!doctype html>
+<title>Crawl Data Dashboard</title>
+<link rel=stylesheet type=text/css href="./static/supervise.css">
+<head>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <div align="center">
+    <form method="POST" action="/tohome" style="float: left">
+        <button name="HOME" class="button SUBMIT" value="submit">HOME</button>
+    </form>
+    </div>
+</head>
+<div class=page>
+  <h1>Edit-Supervise</h1>
+    <form method="POST" action="/calculate">
+        <h2>Move to Supervise Page   <input type="text" name="num" id="num"></h2>
+    </form>
+    <div id="supervise" align="center">
+        <div style="width:100%;float:left;">
+            {% for table in tables %}
+                {{ table | safe }}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+</html>

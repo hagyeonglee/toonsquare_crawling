@@ -4,9 +4,9 @@
 <head>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <div align="center">
-{#    <form method="POST" action="/finalresult"style="float: right" >#}
-{#        <button name="toCSV" class="button SUBMIT" value="submit">to CSV</button>#}
-{#    </form>#}
+        <form method="POST" action="/toresultedit">
+            <button name="SAVE" class="button SUBMIT" value="save">Complete</button>
+        </form>
     <form method="POST" action="/tohome" style="float: left">
         <button name="HOME" class="button SUBMIT" value="submit">HOME</button>
     </form>
@@ -58,10 +58,9 @@
                     <br>
                 {% endif %}
             {% endfor %}
-{#            </form>#}
-{#            <form method="POST" action="/resultemotion">#}
-                <button name="SAVE" class="button SUBMIT" value="submit">Save</button>
+                <button name="SAVE" class="button SUBMIT" value="save">Save</button>
             </form>
+
 {#        {% for edatas in edata %}#}
 {#            {{ edatas }}#}
 {#        {% endfor %}#}

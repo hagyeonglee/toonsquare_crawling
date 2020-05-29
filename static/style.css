@@ -1,11 +1,10 @@
+/*전체적인 css스타일 적용(표, 버튼 스타일)*/
 body            { font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;}
 a, h1, h2, h3, h4, h5       { color: #065471; }
 /*377ba8*/
 h1, h2          { margin: 0; }
 h1              { border-bottom: 2px solid #eeeeee; }
 h2              { font-size: 1.2em; }
-
-/*table.supervise, .supervise th, .supervise td*/
 
 table.dataframe, .dataframe th, .dataframe td {
   height: 20px;
@@ -14,7 +13,6 @@ table.dataframe, .dataframe th, .dataframe td {
   border-collapse: collapse;
   text-align:left;
   padding: 3px;
-  /*margin-bottom: 40px;*/
   font-size: medium;
 }
 
@@ -28,6 +26,16 @@ input#num {
     border-style: dashed;
     border-width: 1px;
     border-color: #065471;
+}
+input {
+
+    width: 91px;
+    height: 75px;
+    border-style: none;
+    border-top: dashed;
+    border-bottom: dashed;
+    text-align: center;
+    padding: 3px;
 }
 
 html, body {
@@ -72,9 +80,6 @@ html, body {
   color: #fff;
   transform: translateY(-7px);
 }
-
-/*tr:nth-child(odd)		{ background-color: #eeeeee; }*/
-/*tr:nth-child(even)	{ background-color: #ffffff; }*/
 
 tr:hover            { background-color: #a3e3db;}
 

@@ -1,14 +1,13 @@
+{#1차 수퍼바이즈가 끝난 데이터들에 대해 결과를 보여주는 화면 역시, SAVE 버튼을 눌러야 저장이 되고 결과가 반영된다.(이때, csv파일로도 저장된다.)-> supervised_first.csv 라는 파일명으로 저장#}
 <!doctype html>
 <title>Crawl Data Dashboard</title>
 <link rel=stylesheet type=text/css href="./static/supervise.css">
 <head>
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <form method="POST" action="/finalresult">
-    {#        <button type="submit">save to CSV</button>#}
-            <button name="toCSV" class="button SUBMIT" value="submit" style="float:right">to CSV</button>
+            <button name="toCSV" class="button SUBMIT" value="submit" style="float:right">SAVE(to CSV)</button>
         </form>
         <form method="POST" action="/tohome">
-    {#        <button type="submit">save to CSV</button>#}
             <button name="HOME" class="button SUBMIT" value="submit" style="float:left">HOME</button>
         </form>
     <form method="POST" action="/edit" style="float: left">
@@ -32,6 +31,5 @@
     <form method="POST" action="/finalresult">
         <button name="toCSV" class="button SUBMIT" value="submit">to CSV</button>
     </form>
-
 </div>
 </html>
